@@ -1,0 +1,266 @@
+/*Variables*/
+:root {
+    --form_bg: #ffffff;
+    --input_bg: #E5E5E5;
+    --input_hover:#eaeaea;
+    --submit_bg: rgb(46, 135, 207);
+    --submit_hover: rgb(46, 135, 207);
+    --icon_color:#6b6b6b;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display:flex;
+    /*background-image: url("../img/FondoLogin.jpg");*/
+    background-color: rgb(46, 135, 207);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+    min-width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Cuadro del Login*/
+#formularioEntero {
+    width: 800px;
+    height: 700px;
+    margin:auto;
+    background-color: var(--form_bg);
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5vw;
+    padding: 5vh 15px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+/*Lugar de la imagen de la izquierda*/
+#Imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Imagen de la izquierda*/
+#Imagen img {
+    width: 350px;
+    height: 350px;
+}
+
+/*Titulos*/
+h1,span {
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 30px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+/*Formulario derecha*/
+#formularioDerechaLogin {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 10% 5%;
+}
+
+/*Inputs email y password*/
+.Inputs {
+    background-color: var(--input_bg);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+/*Al pasar el raton por encima de los input*/
+.Inputs:hover {
+    background-color: var(--input_hover);
+}
+
+/*Inputs de texto y submit*/
+.Inputs,#input_submit,#input_submit2 {
+    height: 60px;
+    border-radius: 30px;
+    width: 100%;
+}
+
+/*Estilo de los input*/
+.input_field {
+    color: var(--icon_color);
+    background-color: inherit;
+    width: 90%;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding-left: 30px;
+}
+
+/*Pasando el ratón por los input y al tener el focus */
+.input_field:hover,.input_field:focus {
+    outline: none;
+}
+
+/*Botón submit*/
+#input_submit {
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    background-color: var(--submit_bg);
+    padding-left: 0;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+/*Botón submit*/
+#input_submit2 {
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    background-color: var(--submit_bg);
+    padding-left: 0;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+/*Pasando el ratón por el botón de submit*/
+#input_submit:hover {
+    background-color: var(--submit_hover);
+    transition: background-color, 1s;
+    cursor: pointer;
+}
+
+.LoginRegistro{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Texto crear cuenta*/
+/*#create_account {
+    display: block;
+    position: relative;
+    top: 30px;
+}*/
+
+/*Enlace crear cuenta*/
+a {    
+    text-decoration: none;
+    color: var(--submit_bg);
+    font-weight: bold;
+}
+
+.Login .Inputs,.Registro .Inputs{
+    margin-bottom:20px;
+}
+
+#TextoLogin{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 2em;
+    height: 60px;
+    border-radius: 30px;
+    width: 100%;
+    background-color: var(--submit_bg);
+    color: white;
+}
+
+#TextoRegistro{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 2em;
+    height: 60px;
+    border-radius: 30px;
+    width: 100%;
+    background-color: var(--submit_bg);
+    color: white;
+}
+
+/*Pasando ratón por el texto crear cuenta*/
+a:hover {
+    color: var(--submit_hover);
+}
+
+.ventanaRecuperacion{
+    height: 250px;
+    width: 700px;
+    position: absolute;
+    background-color: var(--form_bg);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 50px;
+}
+
+.aspa{
+    height: 65px;
+    width: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url("../img/X.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.textoVentana{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnVentana{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    background-color: var(--submit_bg);
+    color: white;
+    font-size: 25px;
+    height: 60px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50px;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/*Recogiendo datos de la BD*/
+.Usuarios{
+    display: none;
+}
+
+/*Ventana errpr Login*/
+.ventanaError{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 2em;
+    height: 200px;
+    width: 500px;
+    background-color: rgb(212, 212, 212);
+    z-index: 20;
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+    border-radius: 50px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+@media screen and (max-width:600px) {
+    #formularioEntero {
+        grid-template-columns: 1fr;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #Imagen {
+        display: none;
+    }
+}

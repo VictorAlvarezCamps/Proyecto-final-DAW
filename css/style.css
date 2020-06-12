@@ -1,0 +1,1498 @@
+
+
+/*Variables*/
+
+
+:root {
+    --azul: rgb(46, 135, 207);
+}
+
+:root {
+    --form_bg: #ffffff;
+    --input_bg: #E5E5E5;
+    --input_hover:#eaeaea;
+    --submit_bg: rgb(46, 135, 207);
+    --submit_hover: rgb(46, 135, 207);
+}
+
+
+@keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+}
+
+@keyframes ImageFadeIn {
+    0% { transform: translate(-.5rem, -.5rem) scale(1.05); opacity: 0; filter: blur(2px); }
+    50% { opacity: 1; filter: blur(2px); }
+    100% { transform: translateY(0) scale(1.0); opacity: 1; filter: blur(0); }
+}
+
+@keyframes LineFadeIn {
+    0% { opacity: 0; d: path("M 0 300 Q 0 300 0 300 Q 0 300 0 300 C 0 300 0 300 0 300 Q 0 300 0 300 "); stroke: #fff; }
+    50% { opacity: 1; d: path("M 0 300 Q 50 300 100 300 Q 250 300 350 300 C 350 300 500 300 650 300 Q 750 300 800 300"); stroke: #888BFF; }
+    100% { opacity: 1; d: path("M -2 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 802 400"); stroke: #545581; }
+}
+
+
+/*Body y header*/
+html{
+    height: 100%;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0;
+}
+
+header{
+    top: 0;
+    left: 0;
+    min-height: 150px;
+    width: 100%;
+    position: relative;
+}
+
+.Recetas{
+    display: none;
+}
+
+.Ingredientes{
+    display: none;
+}
+
+.Usuarios{
+    display: none;
+}
+
+.infoUsuarios{
+    display: none;
+}
+
+.divNovedades{
+    display: none;
+}
+
+.divPuntuadas{
+    display: none;
+}
+
+/*Header*/
+
+.background-Logo{
+    top: 0;
+    width: 150px;
+    box-sizing: content-box;
+    padding-top: 15px;
+    position: absolute;
+    background: rgb(0, 0, 0);
+    z-index: 2;
+    margin-left: 80px;
+}
+
+.background-Logo::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 30px solid transparent;
+    border-left: 75px solid black;
+    border-right: 75px solid black;
+    transform: translateY(30px);
+}
+
+/*Logo*/
+.Logo{
+    height: 120px;
+    width: 150px;
+}
+
+/*Slider*/
+.slider{
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    background-color: mediumaquamarine;
+    top: 0;
+    left: 0;
+    margin-top: 60px;
+    overflow: hidden;
+}
+
+.slider figure {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin: 0;
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    animation: 30s slidy infinite;
+}
+
+.imgSlider{
+    float: left;
+    height: 100vh;
+    width: 100vw;
+}
+
+/*Menú*/
+
+.background-Menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: var(--azul);
+    display: flex;
+    flex-direction: row;
+}
+
+.background-Menu .circle{
+    position: absolute;
+    border: 2px solid black;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 20px;
+    margin-right: 80px;
+    right: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-Menu #nameUser{
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    right: 0;
+    margin-right: 180px;
+}
+
+.background-Menu .circle .imgPerfil{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-image: url("../img/user.png");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+}
+
+.menu{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    top: 0;
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    background: white;
+    width: 170px;
+    height: 100%;
+    padding-left: 30px;
+    position: fixed;
+    z-index: 100;
+    box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
+    right: -130px;
+    transition: all 0.3s;
+    color: #222;
+}
+
+.menu:hover, .menu:focus{
+    transform: translate3d(-130px, 0, 0);
+	animation-timing-function: 1s ease-in;
+}
+
+.menu .textMenu{
+    top:50%;
+    position: absolute;
+    transform: translateY(-50%);
+	transform: rotate(270deg);
+	left: 10px;
+	font-weight: 800;
+	font-size: 25px;
+}
+
+.menu .nav{
+    font-weight: 80;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100vh;
+}
+
+.menu .nav li{
+    padding-bottom: 30px;
+    list-style-type: none;
+    font-weight: bold;
+}
+
+.menu .nav li a{
+    display: block;
+    text-decoration: none;
+    /*Color inherit le quita el color morado del enlace*/
+    color: inherit;
+    transition: all 0.3s;
+}
+
+.menu .nav li a:hover{
+    color: #aaa;
+    text-decoration-line: underline;
+}
+
+.circleMenu{
+    border: 2px solid black;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    transform: translateX(-45px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgPerfilMenu{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-image: url("../img/user.png");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+}
+
+
+.cantTotalRecetas{
+    display: none;
+}
+
+.cierre{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+}
+
+.icons{
+    text-decoration: none;
+    color: inherit;
+    list-style-type: none;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    bottom: 0;
+    left: 0;
+    margin-left: 20px;
+}
+
+.icon-li{    
+    background-size: 100%;
+    height: 40px;
+    width: 40px;
+    margin-left: -20px;    
+    margin-bottom: 10px;
+    
+}
+
+/*Contenido general*/
+.contentPage{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: translateY(160px);
+}
+
+.Contenido{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Parte de inicio*/
+
+#Inicio{
+
+}
+
+.txtNovedades{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -230px;
+    margin-left: 300px;    
+}
+
+.txtPuntuadas{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -230px;
+    margin-left: 800px;
+}
+
+.TablasInicio{
+    width: 90%;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -190px;
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "a b";
+}
+
+.tablaNovedades{
+    grid-area: a;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 300px;
+}
+
+.tablaPuntuadas{
+    grid-area: b;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 300px;
+    margin-left: -50px;
+}
+
+.tarjetaNovedades{
+    background-color: rgb(255, 255, 255);
+    padding: 30px;    
+    z-index: 1;
+    width: 500px;
+    height: 350px;
+    margin-bottom: 20px;
+    list-style-type: none;
+    box-shadow: 0 0 5px rgba(75, 75, 75, 0.212);
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.tarjetaNovedades:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.tarjetaPuntuada{
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+    width: 500px;
+    height: 250px;
+    list-style-type: none;
+    box-shadow: 0 0 5px rgba(75, 75, 75, 0.212);
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.tarjetaPuntuada:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.cuerpoTarjeta{
+    display: inline-block;
+    width: 300px;
+}
+
+.usuarioTarjeta{
+    display: block;
+    font-size: 12px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.nombreRecetaTarjeta{    
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 25px;
+}
+
+.textoVerTarjeta{
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    position: relative;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.textoVerTarjeta::after{
+    background-color: #b8bddd;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 9px;
+    width: 45%;
+}
+
+.imagenTarjeta{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    height: 130px;
+    width: 130px;
+    right: 0;
+    top: 0;
+}
+
+.divGraficoPuntuadas{
+    position:absolute;
+    bottom:0;
+    left:0;
+    height:500px;
+}
+
+.Grafico{
+    height: 100%;
+    width: auto;
+}
+
+.listaUl{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 50px;
+}
+
+/*Parte de los ingredientes del usuario*/
+
+#MisIngredientes{
+    /*display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-gap: 20px;*/
+}
+
+
+.porTipoIngredientes{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-gap: 20px;
+}
+
+.btnTipoIngrediente{
+    background-color: brown;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btnAnyadirIngrediente{
+    position: absolute;
+    top: 0;
+    margin-top: -50px;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    background-color: rgb(255, 255, 255);
+    color: var(--azul);
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: 1px solid var(--azul);
+    height: 50px;
+    width: 200px;
+}
+
+.ventanaAnyadirReceta{
+    height: 400px;
+    width: 600px;
+    color: white;
+    position: absolute;
+    background-color: var(--azul);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "a b";
+}
+
+.txtNombreIngrediente{
+    grid-area: a;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    margin-left: 10px;
+    margin-top: 50px;
+    font-size: 20px;
+
+}
+
+.txtImagenIngrediente{
+    grid-area: a;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    margin-left: 10px;
+    margin-top: 100px;
+    font-size: 20px;
+}
+
+.txtCategoriaIngrediente{
+    grid-area: a;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    margin-left: 10px;
+    margin-top: 150px;
+    font-size: 20px;
+}
+
+.txtCantidadIngrediente{
+    grid-area: a;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    margin-left: 10px;
+    margin-top: 200px;
+    font-size: 20px;
+}
+
+.anyadirIngredienteNombre{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    height: 30px;
+    width: 250px;
+    margin-top: 50px;
+    border-radius: 50px;
+    font-size: 30px;
+    color: var(--azul);
+    padding: 5px;
+}
+
+.anyadirIngredienteImagen{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    height: 30px;
+    width: 300px;
+    margin-top: 100px;
+    border-radius: 50px;
+    border: 1px solid var(--azul);
+    color: white;
+}
+
+.anyadirIngredienteCategoria{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    height: 30px;
+    width: 250px;
+    margin-top: 150px;
+    border-radius: 50px;
+    font-size: 30px;
+    color: var(--azul);
+    padding: 5px;
+}
+
+.anayadirIngredienteCantidad{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    height: 30px;
+    width: 250px;
+    margin-top: 200px;
+    border-radius: 50px;
+    font-size: 30px;
+    color: var(--azul);
+    padding: 5px;
+}
+
+.btnAnyadirIngredientes{
+    grid-area: a;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    height: 30px;
+    width: 250px;
+    margin-top: 300px;
+    border-radius: 50px;
+    border: 1px solid var(--azul);
+    background-color: white;
+    color: var(--azul);
+    font-size: 20px;
+}
+
+.aspaIngrediente{
+    grid-area: b;
+    position: absolute;
+    background-image: url('../img/aspa.png');
+    background-size: 100%;
+    height: 50px;
+    width: 50px;
+    top: 0;
+    right: 0;
+    margin-right: 20px;
+}
+
+/*Recetas del usuario*/
+
+#MisRecetas{
+    
+}
+
+
+/*Recetas de todos los usuarios*/
+
+#TodasLasRecetas{
+    
+}
+
+.Tarjeta{
+    list-style-type: none;
+    width: 280px;
+    height: 400px;
+    border-radius: 6px;
+    /*box-shadow: 0 .25rem .25rem rgba(0,0,0,0.2),0 0 1rem rgba(0,0,0,0.2);*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/*.Tarjeta:hover{
+    transform: rotateY(180deg);
+    transition: transform 0.8s;
+}*/
+
+.informacion{
+    color: rgb(0, 0, 0);
+	font-weight: 300;
+	text-align: center;
+	letter-spacing: 3px;
+    text-shadow: 0 0 3px rgba(0,0,0,0.9);
+    font-size: 30px;
+}
+
+.Tarjeta h1{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    color: #fff;
+	padding: 30px;
+	margin-top: 100px;
+	text-align: center;
+	font-weight: 100;
+    font-size: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.8);
+}
+
+.circulo{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    margin-top: -100px;
+}
+
+.circuloRecetaCarne{
+    background: #2b5876;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, deepskyblue, lightblue);  /* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-gradient(linear, left top, right top, from(deepskyblue), to(lightblue));
+	background: -webkit-linear-gradient(left, deepskyblue, lightblue);
+	background: -o-linear-gradient(left, deepskyblue, lightblue);
+	background: linear-gradient(to right, deepskyblue, lightblue); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-box-shadow: 0 0 20px darkblue;
+            box-shadow: 0 0 20px darkblue;
+}
+
+.circuloRecetaPescado{
+    background: #DA22FF;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-gradient(linear, left top, right top, from(#9733EE), to(#DA22FF));
+	background: -webkit-linear-gradient(left, #9733EE, #DA22FF);
+	background: -o-linear-gradient(left, #9733EE, #DA22FF);
+	background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-box-shadow: 0 0 20px violet;
+	        box-shadow: 0 0 20px violet;
+}
+
+.circuloRecetaSopa{
+    background: #F2994A;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-gradient(linear, left top, right top, from(#F2C94C), to(#F2994A));
+	background: -webkit-linear-gradient(left, #F2C94C, #F2994A);
+	background: -o-linear-gradient(left, #F2C94C, #F2994A);
+	background: linear-gradient(to right, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-box-shadow: 0 0 20px lightyellow;
+	        box-shadow: 0 0 20px lightyellow;
+}
+
+.circuloRecetaEntrante{
+    background: #5433FF;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #A5FECB, #20BDFF, #5433FF);  /* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-gradient(linear, left top, right top, from(#A5FECB), color-stop(#20BDFF), to(#5433FF));
+	background: -webkit-linear-gradient(left, #A5FECB, #20BDFF, #5433FF);
+	background: -o-linear-gradient(left, #A5FECB, #20BDFF, #5433FF);
+	background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-box-shadow: 0 0 20px lightblue;
+	        box-shadow: 0 0 20px lightblue;
+}
+
+.circuloRecetaArroz{
+    background: #ffffff;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, rgb(224, 191, 143), rgb(231, 172, 83));  /* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-gradient(linear, left top, right top, from(rgb(224, 191, 143)), to(rgb(231, 172, 83)));
+	background: -webkit-linear-gradient(left, rgb(224, 191, 143), rgb(231, 172, 83));
+	background: -o-linear-gradient(left, rgb(224, 191, 143), rgb(231, 172, 83));
+	background: linear-gradient(to right, rgb(224, 191, 143), rgb(231, 172, 83)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-box-shadow: 0 0 20px rgb(231, 172, 83);
+	        box-shadow: 0 0 20px rgb(231, 172, 83);
+}
+
+.circuloRecetaPasta{
+    background: #AA076B;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #61045F, #AA076B);  /* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-gradient(linear, left top, right top, from(#61045F), to(#AA076B));
+	background: -webkit-linear-gradient(left, #61045F, #AA076B);
+	background: -o-linear-gradient(left, #61045F, #AA076B);
+	background: linear-gradient(to right, #61045F, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-box-shadow: 0 0 20px purple;
+	        box-shadow: 0 0 20px purple;
+}
+
+.circuloRecetaPizza{
+    background: #2b5876;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #fa3, #fa3380);  /* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-gradient(linear, left top, right top, from(#fa3), to(#fa3380));
+	background: -webkit-linear-gradient(left, #fa3, #fa3380);
+	background: -o-linear-gradient(left, #fa3, #fa3380);
+	background: linear-gradient(to right, #fa3, #fa3380); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-box-shadow: 0 0 20px #fa3380;
+	        box-shadow: 0 0 20px #fa3380;
+}
+
+.circuloRecetaVegano{
+    background: #02AAB0;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #00CDAC, #02AAB0);  /* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-gradient(linear, left top, right top, from(#00CDAC), to(#02AAB0));
+	background: -webkit-linear-gradient(left, #00CDAC, #02AAB0);
+	background: -o-linear-gradient(left, #00CDAC, #02AAB0);
+	background: linear-gradient(to right, #00CDAC, #02AAB0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-box-shadow: 0 0 20px lightgreen;
+	        box-shadow: 0 0 20px lightgreen;
+}
+
+.letraCustom{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+	color: #fff;
+	position: relative;
+	font-size: 80px;
+	text-align: center;
+    font-weight: 100;
+}
+
+.ventanaReceta{
+    height: 600px;
+    width: 800px;
+    color: white;
+    position: absolute;
+    background-color: var(--azul);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: "a b"
+                         "c d";
+    position: fixed;
+}
+
+.ventanaRecetaNombre{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    margin-top: 50px;
+    margin-left: 50px;
+    font-size: 20px;
+}
+
+.ventanaRecetaDescripcion{
+    grid-area: d;    
+    height: 200px;
+    width: 200px;
+}
+
+.ventanaRecetaImagen{
+    grid-area: a;
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    background-size: 100% 100%;
+}
+
+.ventanaRecetaCategoria{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    margin-top: 100px;
+    margin-left: 50px;
+    font-size: 20px;
+}
+
+.ventanaRecetaIngredientes{
+    grid-area: c;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    height: 200px;
+    width: 200px;
+    margin-left: 10px;
+    left: 0;
+}
+
+.ventanaRecetaPuntuacion{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    margin-top: 150px;
+    margin-left: 50px;
+    font-size: 20px;
+}
+
+.aspa{
+    position: absolute;
+    background-image: url('../img/aspa.png');
+    background-size: 100%;
+    height: 50px;
+    width: 50px;
+    top: 0;
+    right: 0;
+    margin: 20px;
+}
+
+.txtRecetaNombre{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    margin-top: 50px;
+    margin-left: -50px;
+    font-size: 20px;
+}
+
+.txtRecetaDescripcion{
+    grid-area: d;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 20px;
+    margin-top: -30px;
+}
+
+.txtRecetaCategoria{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 20px;
+    margin-top: 100px;
+    margin-left: -50px;
+}
+
+.txtRecetaIngredientes{
+    grid-area: c;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 20px;
+    margin-top: -30px;
+    margin-left: 10px;
+}
+
+.txtRecetaPuntuacion{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 20px;
+    margin-top: 150px;
+    margin-left: -50px;
+}
+
+
+
+/*Perfil usuario*/
+
+#MiPerfil{
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;    
+}
+
+.cuadroPerfil{
+    background-color: var(--azul);
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 350px 320px;
+    grid-template-areas: "a b"
+                         "c d";
+}
+
+.imgPerfil2{
+    grid-area: a;
+    height: 200px;
+    width: 200px;
+    margin-top: 50px;
+    margin-left: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 100%;
+    background-image: url("../img/user.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.textoPerfil{
+    background-color: var(--input_bg);
+    padding-left: 20px;
+    height: 40px;
+    border-radius: 30px;
+    width: 50%;
+}
+
+.textoPerfil:hover{
+    background-color: var(--input_hover);
+}
+
+.inputUsuario{
+    grid-area: b;
+    margin-left: 150px;
+    margin-top: 50px;
+    font-size: 20px;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+}
+
+.inputNombre{
+    grid-area: b;
+    margin-left: 150px;
+    margin-top: 150px;
+    font-size: 20px;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+}
+
+.inputCorreo{
+    grid-area: b;
+    margin-left: 150px;
+    margin-top: 250px;
+    font-size: 20px;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+}
+
+.inputPassword{
+    grid-area: b;
+    margin-left: 150px;
+    margin-top: 350px;
+    font-size: 20px;
+}
+
+.inputDescripcion{
+    grid-area: d;
+    margin-top: 70px;
+    width: 100%;
+    height: 200px;
+    margin-left: -50px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+}
+
+.labelUsuario{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.labelNombre{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    margin-top: 150px;
+    font-size: 30px;
+}
+
+.labelCorreo{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    margin-top: 250px;
+    font-size: 30px;
+}
+
+.labelPassword{
+    grid-area: b;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    margin-top: 350px;
+    font-size: 30px;
+}
+
+.labelDescripcion{
+    grid-area: c;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 70px;
+}
+
+.labelCambiarFoto{
+    grid-area: a;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 70px;
+}
+
+.cantRecetasTexto{
+    grid-area: c;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.cantRecetasTexto2{
+    grid-area: c;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 30px;
+    margin-left: 250px;
+}
+
+.btnModificarPerfil{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    background-color: rgb(255, 255, 255);
+    padding-left: 0;
+    font-weight: bold;
+    color: var(--azul);
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: 1px solid var(--azul);
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+.btnGuardarPerfil{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    background-color: rgb(255, 255, 255);
+    padding-left: 0;
+    font-weight: bold;
+    color: var(--azul);
+    text-transform: uppercase;
+    border-radius: 50px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    border: 1px solid var(--azul);
+}
+
+.btnCambiarFoto{
+    grid-area: a;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    height: 20px;
+    margin-top: 280px;
+    margin-left: 30px;
+    width: 250px;
+}
+
+.btnModificarPerfil:hover{
+    color: white;
+    background-color: var(--submit_hover);
+    transition: background-color, 1s;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.btnGuardarPerfil:hover{
+    color: white;
+    background-color: var(--submit_hover);
+    transition: background-color, 1s;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+/*Filtros*/
+
+
+.filtros{
+    position: absolute;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    top: 0;
+    height: 60px;
+    width: 30%;
+    border-radius: 30px;    
+    margin-top: -150px;
+    margin-left: 150px;   
+    font-weight: 400;
+    padding-left: 30px;
+    font-size: 30px;
+    padding-left: 20px;
+    color: var(--azul);
+}
+
+.textoFiltro{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    position: absolute;
+    top: 0;
+    margin-top: -150px;
+    font-size: 50px;
+    
+}
+
+.imagenSubida{
+    display: none;
+}
+
+/*MEDIA QUERIES*/
+
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+
+    header{
+        top: 0;
+        left: 0;
+        right: 0;
+        min-height: 200px;
+        min-width: 100%;
+        position: relative;
+    }
+
+    .background-Menu{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100px;
+        width: 100%;
+        background-color: var(--azul);
+        display: flex;
+        flex-direction: row;
+    }
+
+    .background-Menu #nameUser{
+        position: absolute;
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        right: 0;
+        margin-right: 250px;
+    }
+
+    .background-Menu .circle{
+        position: absolute;
+        border: 2px solid black;
+        height: 100px;
+        width: 100px;
+        margin-bottom: 20px;
+        margin-right: 120px;
+        right: 0;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .background-Menu .circle .imgPerfil{
+        position: relative;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-image: url("../img/user.png");
+        background-size: 90% 90%;
+        background-repeat: no-repeat;
+    }
+
+    .circleMenu{
+        border: 2px solid black;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        transform: translateX(-45px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+    }
+    
+    .imgPerfilMenu{
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-image: url("../img/user.png");
+        background-size: 90% 90%;
+        background-repeat: no-repeat;
+    }
+
+
+    .menu .nav li{
+        padding-bottom: 30px;
+        list-style-type: none;
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    .menu .textMenu{
+        top:50%;
+        position: absolute;
+        transform: translateY(-50%);
+        transform: rotate(270deg);
+        left: 10px;
+        font-weight: 800;
+        font-size: 50px;
+    }
+
+    .cierre{
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 100px;
+    }
+
+
+
+    .TablasInicio{
+        width: 90%;
+        height: 900px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: -190px;
+        margin-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /*display: grid;
+        grid-template-columns: 200px;
+        grid-template-areas: "a";*/
+    }
+
+
+    .tablaNovedades{
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        width: 300px;
+        margin-top: 20px;
+    }
+    
+    .tablaPuntuadas{
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        width: 300px;
+        margin-left: 1px;
+    }
+
+    .txtNovedades{
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        font-size: 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: -230px;
+        margin-left: 300px;    
+    }
+    
+    .txtPuntuadas{
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        font-size: 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 400px;
+        margin-left: 300px;
+    }
+
+    .nombreRecetaTarjeta{    
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 25px;
+    }
+
+    .usuarioTarjeta{
+        display: block;
+        font-size: 20px;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+    }
+
+    .btnAnyadirIngrediente{
+        position: absolute;
+        top: 0;
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        background-color: rgb(255, 255, 255);
+        color: var(--azul);
+        text-transform: uppercase;
+        border-radius: 50px;
+        border: 1px solid var(--azul);
+        height: 50px;
+        width: 200px;
+        margin-top: -150px;
+        margin-left: 550px;
+    }
+
+    .ventanaAnyadirReceta{
+        height: 600px;
+        width: 600px;
+        color: white;
+        position: absolute;
+        background-color: var(--azul);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 25px;
+        position: fixed;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+        grid-template-areas: "a b";
+    }
+
+    .txtNombreIngrediente{
+        grid-area: a;
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        margin-left: 10px;
+        margin-top: 50px;
+        font-size: 30px;
+    
+    }
+    
+    .txtImagenIngrediente{
+        grid-area: a;
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        margin-left: 10px;
+        margin-top: 150px;
+        font-size: 30px;
+    }
+    
+    .txtCategoriaIngrediente{
+        grid-area: a;
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        margin-left: 10px;
+        margin-top: 250px;
+        font-size: 30px;
+    }
+    
+    .txtCantidadIngrediente{
+        grid-area: a;
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        margin-left: 10px;
+        margin-top: 350px;
+        font-size: 30px;
+    }
+
+    .anyadirIngredienteNombre{
+        grid-area: b;
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        height: 30px;
+        width: 200px;
+        margin-top: 50px;
+        border-radius: 50px;
+        font-size: 30px;
+        color: var(--azul);
+        margin-left: 10px;
+        padding: 10px;
+    }
+    
+    .anyadirIngredienteImagen{
+        grid-area: b;
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        height: 30px;
+        width: 200px;
+        margin-top: 150px;
+        color: white;
+        font-size: 15px;
+        color: var(--azul);
+        margin-left: 10px;        
+    }
+    
+    .anyadirIngredienteCategoria{
+        grid-area: b;
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        height: 30px;
+        width: 200px;
+        margin-top: 250px;
+        border-radius: 50px;
+        font-size: 30px;
+        color: var(--azul);
+        margin-left: 10px;
+        padding: 10px;
+    }
+    
+    .anayadirIngredienteCantidad{
+        grid-area: b;
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        height: 30px;
+        width: 200px;
+        margin-top: 350px;
+        border-radius: 50px;
+        font-size: 30px;
+        color: var(--azul);
+        margin-left: 10px;
+        padding: 10px;
+    }
+
+    .btnAnyadirIngredientes{
+        grid-area: a;
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        height: 50px;
+        width: 300px;
+        margin-top: 450px;
+        border-radius: 50px;
+        border: 1px solid var(--azul);
+        background-color: white;
+        color: var(--azul);
+        font-size: 30px;
+    }
+
+    .listaUl{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 50px;
+    }
+
+    .menu{
+        font-family: 'Dancing Script', Georgia, Times, serif;
+        top: 0;
+        position: absolute;
+        font-size: 20px;
+        font-weight: bold;
+        background: white;
+        width: 200px;
+        height: 100%;
+        padding-left: 30px;
+        position: fixed;
+        z-index: 100;
+        box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
+        right: -130px;
+        transition: all 0.3s;
+        color: #222;
+    }
+    
+    .background-Menu .circle .imgPerfil{
+        position: relative;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-image: url("../img/user.png");
+        background-size: 90% 90%;
+        background-repeat: no-repeat;
+    }
+
+    .circleMenu{
+        border: 2px solid black;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        transform: translateX(-45px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 30px;
+    }
+}
