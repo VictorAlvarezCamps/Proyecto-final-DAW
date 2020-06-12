@@ -14,13 +14,6 @@
 
     <!--JQUERY-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
-
-    <!--Encriptar y desencriptar-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
-
-    <!--Filtros-->
-
-
     
     <script src="js/api.js"></script>
     <script src="js/inicio.js"></script>

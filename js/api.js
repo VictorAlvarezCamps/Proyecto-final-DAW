@@ -1,5 +1,5 @@
 /*Función que enviará un correo a un usuario para recuperar el password*/
-function sendEmail(e) {
+/*function sendEmail(e) {
 
     /*let b = "Hola!";
     b += "Hemos recibido una solicitud nueva para la recuperación de tu cuenta.";
@@ -9,7 +9,7 @@ function sendEmail(e) {
     b += generarPass();
     b += "";*/
 
-    $.ajax({
+    /*$.ajax({
         url: 'api2.php',
         type: 'POST',
         data: 'email='+e,
@@ -19,10 +19,10 @@ function sendEmail(e) {
         error: function(){
         alert('Error!');
         }
-    });
+    });*/
 
-    //prueba1234
-}
+    
+//}
 
 /*Función para generar una contrasenya nueva*/
 function generarPass() {
@@ -215,10 +215,10 @@ function obtenerPuntuadas(){
 function CantTotalRecetas(){
 
     let cantT = document.getElementsByClassName("cantTotalRecetas");
+    
+    let cant = cantT[0].innerHTML.replace('"','');
 
-    let v = cantT[0].innerHTML;
-
-    v = v.substr(1,1);
+    let v = cant.substr(0,cant.length-1);
 
     return v;
 
