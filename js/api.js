@@ -408,53 +408,52 @@ function activarCampo(input){
 /*Función para comparar 2 objetos 1 de datos antiguos, 2 datos nuevos*/
 function comparar(a,b){
 
-    //Datos antiguos
-    //console.log(a);
+    //console.log(a[0]);
 
-    //Datos nuevos
     //console.log(b);
-
+    
+    
 
     //Imagen
-    let datoAntiguo1 = a[0].value;
+    //let datoAntiguo1 = a[0].files;
 
     //Usuario
-    let datoAntiguo2 = a[1].value;
+    let datoAntiguo2 = a[0].value;
 
     //Nombre
-    let datoAntiguo3 = a[2].value;
+    let datoAntiguo3 = a[1].value;
 
     //Correo
-    let datoAntiguo4 = a[3].value;
+    let datoAntiguo4 = a[2].value;
 
     //Password
-    let datoAntiguo5 = a[4].value;
+    let datoAntiguo5 = a[3].value;
 
     //Descripcion
-    let datoAntiguo6 = a[5].value; 
+    let datoAntiguo6 = a[4].value; 
 
     
     //Imagen
-    let datoNuevo1 = b[0].value;
+    //let datoNuevo1 = b[0].files;
 
     //Usuario
-    let datoNuevo2 = b[1].value;
+    let datoNuevo2 = b[0].value;
 
     //Nombre
-    let datoNuevo3 = b[2].value;
+    let datoNuevo3 = b[1].value;
 
     //Correo
-    let datoNuevo4 = b[3].value;
+    let datoNuevo4 = b[2].value;
 
     //Password
-    let datoNuevo5 = b[4].value;
+    let datoNuevo5 = b[3].value;
 
     //Descripcion
-    let datoNuevo6 = b[5].value; 
+    let datoNuevo6 = b[4].value; 
 
     let nuevosDatos = new Array();
 
-    if(datoAntiguo1 != datoNuevo1){nuevosDatos.push(datoNuevo1);}else{nuevosDatos.push(datoAntiguo1);}
+    //if(datoAntiguo1 != datoNuevo1){nuevosDatos.push(datoNuevo1);}else{nuevosDatos.push(datoAntiguo1);}
     if(datoAntiguo2 != datoNuevo2){nuevosDatos.push(datoNuevo2);}else{nuevosDatos.push(datoAntiguo2);}
     if(datoAntiguo3 != datoNuevo3){nuevosDatos.push(datoNuevo3);}else{nuevosDatos.push(datoAntiguo3);}
     if(datoAntiguo4 != datoNuevo4){nuevosDatos.push(datoNuevo4);}else{nuevosDatos.push(datoAntiguo4);}
@@ -470,17 +469,45 @@ function guardarInfoBD(nuevaInfo){
     const urlParams = new URLSearchParams(queryString);
     const id = urlParams.get('i');
 
-    let imagen;
+    //let imagen;
     let usuario;
-    let Nombre;
+    let nombre;
+    let correo;
+    let password;
+    let descripcion;
 
+    //leerArchivo(nuevaInfo[0][0]);
 
-    /*var form = $('<form action="cambiarDatosPerfil.php" method="post">' +
-    '<input type="text" name="datosNuevos" value="' +  + '" />' +
-    '<input type="text" name="id" value="' + id + '" />' +
-    '</form>');
-    $('body').append(form);
-    form.submit();*/
+    //let divImagen = document.body.getElementsByClassName("imagenSubidaPerfil");     
+
+    console.log(nuevaInfo);
+    
+
+    //imagen = divImagen;
+    usuario = nuevaInfo[0];
+    nombre = nuevaInfo[1];
+    correo = nuevaInfo[2];
+    password = nuevaInfo[3];
+    descripcion = nuevaInfo[4];   
+
+    //for (let div of divImagen) {
+        
+        var form = $('<form action="cambiarDatosPerfil.php" method="post">' +
+        //'<input type="text" name="imagen" value="' + b64toBlob(div.innerText) + '" />' +
+        '<input type="text" name="usuario" value="' + usuario + '" />' +
+        '<input type="text" name="nombre" value="' + nombre + '" />' +
+        '<input type="text" name="correo" value="' + correo + '" />' +
+        '<input type="text" name="password" value="' + password + '" />' +
+        '<input type="text" name="descripcion" value="' + descripcion + '" />' +
+        '<input type="text" name="id" value="' + id + '" />' +
+        '</form>');
+        $('body').append(form);
+
+        //document.body.removeChild(div);
+        form.submit();
+    //}
+
+    /**/
 }
 
 /*Función para obtener la cantidad y el peso del ingrediente*/
@@ -505,7 +532,7 @@ function leerArchivo(file) {
     r.onload = function (res) {
         res = r.result;
         let div = document.createElement("div");
-        div.classList.add("imagenSubida");
+        div.classList.add("imagenSubidaPerfil");
         div.innerText = res;
         document.body.appendChild(div);        
     };   
@@ -537,13 +564,16 @@ function b64toBlob(dataURI) {
 }
 
 /*Función para añadir a la base de datos un ingrediente*/
-function anyadirIngredienteBD(inputNombre,imagen,inputCategoria,inputCantidad){
+function anyadirIngredienteBD(inputNombre,inputCategoria,inputCantidad){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const id = urlParams.get('i');
 
+    console.log(imagen.files);
+    
+
     let nombreIngrediente = inputNombre.value;
-    let imagenIngrediente = imagen.files[0];
+    //let imagenIngrediente = imagen.files[0];
     let categoriaIngrediente = inputCategoria.value;
 
     leerArchivo(imagenIngrediente);
@@ -563,7 +593,7 @@ function anyadirIngredienteBD(inputNombre,imagen,inputCategoria,inputCantidad){
         document.body.removeChild(div);
         form.submit();
 
-    }
+    }*/
 }
 
 function buscarIngredientes(IngredientesRecetas) {

@@ -227,12 +227,12 @@ function anyadirIngrediente() {
 
     //Inputs
     let inputNombre = document.createElement("input");
-    let imagen = document.createElement("input");
+    //let imagen = document.createElement("input");
     let inputCategoria = document.createElement("input");
     let btnAnyadirIngredientes = document.createElement("button");
     btnAnyadirIngredientes.innerText = "Añadir ingredientes";
     btnAnyadirIngredientes.addEventListener("click",function (e) {
-        anyadirIngredienteBD(inputNombre,imagen,inputCategoria,inputCantidad);
+        anyadirIngredienteBD(inputNombre,inputCategoria,);
     })
     
     imagen.type = "file";
@@ -244,7 +244,7 @@ function anyadirIngrediente() {
 
     //Añadimos elementos
     ventana.appendChild(inputNombre);
-    ventana.appendChild(imagen);
+    //ventana.appendChild(imagen);
     ventana.appendChild(inputCategoria);
     ventana.appendChild(btnAnyadirIngredientes);
 
@@ -590,9 +590,8 @@ function construirPerfil(Usuario){
     btnModificar.innerText = "Modificar perfil";
     let btnGuardar = document.createElement("button");
     btnGuardar.innerText = "Guardar cambios";
-    let btnCambiarFoto = document.createElement("input");
-    btnCambiarFoto.innerText = "Cambiar foto";
-    btnCambiarFoto.setAttribute("type","file");
+    /*let btnCambiarFoto = document.createElement("input");
+    btnCambiarFoto.type = "file";*/
 
     //Seleccionamos el div perfil
     divPerfil = document.getElementById("MiPerfil");
@@ -671,7 +670,7 @@ function construirPerfil(Usuario){
     //Botones
     btnModificar.classList.add("btnModificarPerfil");
     btnGuardar.classList.add("btnGuardarPerfil");
-    btnCambiarFoto.classList.add("btnCambiarFoto");
+    //btnCambiarFoto.classList.add("btnCambiarFoto");
 
     let datosActuales = new Array();
 
@@ -694,7 +693,7 @@ function construirPerfil(Usuario){
 
     //Añadimos los componentes
     divPerfil.appendChild(cuadroPerfil);
-    cuadroPerfil.appendChild(btnCambiarFoto);
+    //cuadroPerfil.appendChild(btnCambiarFoto);
     cuadroPerfil.appendChild(btnModificar);
     cuadroPerfil.appendChild(btnGuardar);
     cuadroPerfil.appendChild(txtUsuario);

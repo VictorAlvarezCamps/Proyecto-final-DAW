@@ -8,24 +8,25 @@
 
     $api = new api();
 
-    $nuevaInfo = isset($_POST['datosNuevos']) ? $_POST['datosNuevos'] : null;
+    //$imagen = isset($_POST['imagen']) ? $_POST['imagen'] : null;
+    $usuario = isset($_POST['usuario']) ? $_POST['usuario'] : null;
+    $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
+    $correo = isset($_POST['correo']) ? $_POST['correo'] : null;
+    $password = isset($_POST['password']) ? $_POST['password'] : null;
+    $descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : null;
     $id = isset($_POST['id']) ? $_POST['id'] : null;
-
-    //Datos nuevos
-    $info = explode(",",$nuevaInfo);
-
-    $dato1 = $info[0];
-    $dato2 = $info[1];
-    $dato3 = $info[2];
-    $dato4 = $info[3];
     
-    $actualizarDatosUsuario = "UPDATE USUARIO SET Nombre = '" . $info[1] . "', Password = '" . $info[2] . "' , Nick = '" . $info[0] . "', Descripcion = '" . $info[3] . "' WHERE ID = " . $id;
+    $actualizarDatosUsuario = "UPDATE Usuario SET Nombre = '" . $nombre . "', Password = '" . $password . "', Nick = '" . $usuario . "', Descripcion = '" . $descripcion . "' WHERE ID = " . $id;
+
+    echo $actualizarDatosUsuario;
 
     $Usuarios = $api->Consulta($conexion,$actualizarDatosUsuario);
 
+    var_dump($Usuarios);
+
     $row = mysqli_fetch_array($Usuarios,MYSQLI_ASSOC);
        
-    //header("Location: vistaLogin.php");
+    header("Location: vistaLogin.php");
 
 
 
