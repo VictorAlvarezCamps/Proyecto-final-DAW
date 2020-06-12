@@ -564,36 +564,33 @@ function b64toBlob(dataURI) {
 }
 
 /*Función para añadir a la base de datos un ingrediente*/
-function anyadirIngredienteBD(inputNombre,inputCategoria,inputCantidad){
+function anyadirIngredienteBD(inputNombre,inputCategoria){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const id = urlParams.get('i');
-
-    console.log(imagen.files);
-    
+    const id = urlParams.get('i');    
 
     let nombreIngrediente = inputNombre.value;
     //let imagenIngrediente = imagen.files[0];
     let categoriaIngrediente = inputCategoria.value;
 
-    leerArchivo(imagenIngrediente);
+    //leerArchivo(imagenIngrediente);
 
-    let divImagen = document.body.getElementsByClassName("imagenSubida");   
+    //let divImagen = document.body.getElementsByClassName("imagenSubida");   
 
-    for (let div of divImagen) {
+    //for (let div of divImagen) {
         
         var form = $('<form action="anyadirIngredienteBD.php" method="post">' +
         '<input type="text" name="nombreIngrediente" value="' + nombreIngrediente + '" />' +
-        '<input type="text" name="imagenIngrediente" value="' + b64toBlob(div.innerText) + '" />' +
+        //'<input type="text" name="imagenIngrediente" value="' + b64toBlob(div.innerText) + '" />' +
         '<input type="text" name="categoriaIngrediente" value="' + categoriaIngrediente + '" />' +
         '<input type="text" name="id" value="' + id + '" />' +
         '</form>');
         $('body').append(form);
 
-        document.body.removeChild(div);
+        //document.body.removeChild(div);
         form.submit();
 
-    }*/
+    //}
 }
 
 function buscarIngredientes(IngredientesRecetas) {

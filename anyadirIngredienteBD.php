@@ -15,18 +15,10 @@
 
     $imagen =  base64_encode(addslashes($blobImagen));
 
-    $insertarIngrediente = "INSERT INTO Ingrediente(Nombre,Imagen,Categoria,IngredienteUsuario) VALUES ('" . $nombre . "','" . $imagen ."'," . $categoria .",'" . $id ."')";
+    $insertarIngrediente = "INSERT INTO Ingrediente(Nombre,Categoria,IngredienteUsuario) VALUES ('" . $nombre . "','" . $categoria ."'," . $id .")";
 
     $Ingrediente = $api->Consulta($conexion,$insertarIngrediente);
 
-    //$row = mysqli_fetch_array($Ingrediente,MYSQLI_ASSOC);
-
-    //$total = mysqli_num_rows($Ingrediente);
-
-    var_dump($conexion);
-    echo $insertarIngrediente."<br>";
-    var_dump($Ingrediente);
-
-    //header("Location: vistaLogin.php");
+    header("Location: vistaLogin.php");
 
 ?>

@@ -213,17 +213,17 @@ function anyadirIngrediente() {
     let txtNombreIngrediente = document.createElement("label");
     let txtImagenIngrediente = document.createElement("label");
     let txtCategoriaIngrediente = document.createElement("label");
-    let txtCantidadIngrediente = document.createElement("label");
+    //let txtCantidadIngrediente = document.createElement("label");
 
     txtNombreIngrediente.classList.add("txtNombreIngrediente");
-    txtImagenIngrediente.classList.add("txtImagenIngrediente");
+    //txtImagenIngrediente.classList.add("txtImagenIngrediente");
     txtCategoriaIngrediente.classList.add("txtCategoriaIngrediente");
-    txtCantidadIngrediente.classList.add("txtCantidadIngrediente");
+    //txtCantidadIngrediente.classList.add("txtCantidadIngrediente");
 
     txtNombreIngrediente.innerText = "Nombre del ingrediente: ";
-    txtImagenIngrediente.innerText = "Selecciona imagen del ingrediente: ";
+    //txtImagenIngrediente.innerText = "Selecciona imagen del ingrediente: ";
     txtCategoriaIngrediente.innerText = "Categoria del ingrediente: ";
-    txtCantidadIngrediente.innerText = "Cantidad de ingredientes: ";
+    //txtCantidadIngrediente.innerText = "Cantidad de ingredientes: ";
 
     //Inputs
     let inputNombre = document.createElement("input");
@@ -232,13 +232,13 @@ function anyadirIngrediente() {
     let btnAnyadirIngredientes = document.createElement("button");
     btnAnyadirIngredientes.innerText = "Añadir ingredientes";
     btnAnyadirIngredientes.addEventListener("click",function (e) {
-        anyadirIngredienteBD(inputNombre,inputCategoria,);
+        anyadirIngredienteBD(inputNombre,inputCategoria);
     })
     
-    imagen.type = "file";
+    //imagen.type = "file";
 
     inputNombre.classList.add("anyadirIngredienteNombre");
-    imagen.classList.add("anyadirIngredienteImagen");
+    //imagen.classList.add("anyadirIngredienteImagen");
     inputCategoria.classList.add("anyadirIngredienteCategoria");
     btnAnyadirIngredientes.classList.add("btnAnyadirIngredientes");
 
@@ -249,7 +249,7 @@ function anyadirIngrediente() {
     ventana.appendChild(btnAnyadirIngredientes);
 
     ventana.appendChild(txtCategoriaIngrediente);
-    ventana.appendChild(txtImagenIngrediente);
+    //ventana.appendChild(txtImagenIngrediente);
     ventana.appendChild(txtNombreIngrediente);
     ventana.appendChild(aspa);
     
