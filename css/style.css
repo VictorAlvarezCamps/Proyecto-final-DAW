@@ -819,9 +819,10 @@ header{
 }
 
 .ventanaRecetaDescripcion{
-    grid-area: d;    
-    height: 200px;
-    width: 200px;
+    grid-area: d;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    height: 250px;
+    width: 300px;
 }
 
 .ventanaRecetaImagen{
@@ -846,8 +847,8 @@ header{
 .ventanaRecetaIngredientes{
     grid-area: c;
     font-family: 'Dancing Script', Georgia, Times, serif;
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 300px;
     margin-left: 10px;
     left: 0;
 }

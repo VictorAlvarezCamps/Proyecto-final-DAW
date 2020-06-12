@@ -353,7 +353,6 @@ function construirRecetasDisponibles(datos,div) {
         //console.log(res);
         
         if(res == true){
-            console.log(IngredienteRecetas);
 
             //Div para crear la tarjeta
             tarjeta = document.createElement("li");
@@ -498,7 +497,10 @@ function mostrarDatosTarjeta(datos) {
     let Imagen = datos[0].Imagen;
     let Ingredientes = datos[0].Ingredientes;
     let Nombre = datos[0].Nombre;
-    let Puntuacion = datos[0].Puntuacion;
+    //let Puntuacion = datos[0].Puntuacion;
+
+    console.log(Descripcion);
+    
 
     //Creamos los elementos
     let ventanaReceta = document.createElement("div");
@@ -526,43 +528,34 @@ function mostrarDatosTarjeta(datos) {
     let ingredientes = document.createElement("textarea");
     ingredientes.classList.add("ventanaRecetaIngredientes");
 
-    let puntuacion = document.createElement("label");
-    puntuacion.classList.add("ventanaRecetaPuntuacion");
-
     //Textos
     let txtRecetaNombre = document.createElement("label");
     let txtRecetaDescripcion = document.createElement("label");
     let txtRecetaCategoria = document.createElement("label");
     let txtRecetaIngredientes = document.createElement("label");
-    let txtRecetaPuntuacion = document.createElement("label");
     
     txtRecetaNombre.classList.add("txtRecetaNombre");
     txtRecetaDescripcion.classList.add("txtRecetaDescripcion");
     txtRecetaCategoria.classList.add("txtRecetaCategoria");
     txtRecetaIngredientes.classList.add("txtRecetaIngredientes");
-    txtRecetaPuntuacion.classList.add("txtRecetaPuntuacion");
 
     txtRecetaNombre.innerText = "Nombre: ";
     txtRecetaDescripcion.innerText = "Descripción: ";
     txtRecetaCategoria.innerText = "Categoria: ";
     txtRecetaIngredientes.innerText = "Ingredientes: ";
-    txtRecetaPuntuacion.innerText = "Puntuacion: ";
 
     //Añadimos los datos
     img.style.backgroundImage = "url('data:image/jpeg;base64," + Imagen + "')";
     nombre.innerText = Nombre;
-    Descripcion.innerText = Descripcion;
+    descripcion.innerText = Descripcion;
     ingredientes.innerText = Ingredientes;
     categoria.innerText = Categoria;
-    puntuacion.innerText = Puntuacion;
 
     //Unimos los elementos
-    ventanaReceta.appendChild(txtRecetaPuntuacion);
     ventanaReceta.appendChild(txtRecetaIngredientes);
     ventanaReceta.appendChild(txtRecetaCategoria);
     ventanaReceta.appendChild(txtRecetaDescripcion);
     ventanaReceta.appendChild(txtRecetaNombre);
-    ventanaReceta.appendChild(puntuacion);
     ventanaReceta.appendChild(ingredientes);
     ventanaReceta.appendChild(categoria);
     ventanaReceta.appendChild(descripcion);
