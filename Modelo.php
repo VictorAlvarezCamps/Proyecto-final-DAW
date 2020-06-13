@@ -4,7 +4,7 @@
 
         function conexion(){
 
-            session_start();
+            //session_start();
 
             //AWARDSPACE
             /*$servername = "fdb23.awardspace.net";

@@ -103,8 +103,6 @@ function verificarLogin(datos){
 
     if(jsonVacio(datos) == false){
 
-        console.log(datos);
-
         let info = JSON.stringify(datos);
 
         let id = info.substring(info.length-4,info.length-3);

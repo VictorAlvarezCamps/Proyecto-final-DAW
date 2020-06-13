@@ -9,10 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <!--Para el envío de correo y recuperación de cuenta-->
-    
-    <!--Librerias-->
-    <!--Encriptar y desencriptar-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 
 </head>
 <body>
@@ -71,10 +67,8 @@
                     </div>
                     <div class="Inputs">
                         <input  placeholder="Password" type="password" name="PasswordRegistro" id="field_password_Register" class='input_field' autocomplete="on">
-                    </div>
-                    <!--<span id='create_account'>-->
+                    </div>                    
                     <input type="submit" name="verificarRegistro" value="Crear una cuenta ➡" id='input_submit2' class='input_field'> </a>
-                    <!--</span>-->
                 </div>
             </form>
 

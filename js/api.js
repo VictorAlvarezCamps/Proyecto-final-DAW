@@ -1,4 +1,8 @@
-/*Función que enviará un correo a un usuario para recuperar el password*/
+/**
+ * Función que enviará un correo a un usuario para recuperar el password
+ * @param  {string} e String email
+ */
+
 /*function sendEmail(e) {
 
     /*let b = "Hola!";
@@ -24,7 +28,11 @@
     
 //}
 
-/*Función para generar una contrasenya nueva*/
+
+/**
+ * Función para generar una contrasenya nueva para el correo perdido
+ * @return {string}      Devuelve un string generado aleatoriamente con un máximo de 10 carácteres
+ */
 function generarPass() {
 
     let pass = "";
@@ -38,7 +46,10 @@ function generarPass() {
     return pass;
 }
 
-/*Devuelve una letra o un número al azar*/
+/**
+ * Función que devuelve una letra o un número al azar
+ * @return {string}      Devuelve una letra o un número aleatorio como string
+ */
 function devolverLetraNum() {
 
     /*GenerarPassword*/
@@ -53,7 +64,11 @@ function devolverLetraNum() {
     return r;
 }
 
-/*Función que detecta si el texto recibido es un correo*/
+/**
+ * Función que detecta si el texto recibido es un correo
+ * @param  {String} email Email string
+ * @return {boolean}      True -> Es un correo, False -> No es un correo
+ */
 function emailCorrecto(email) {
 
     let regexEmail = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gim;
@@ -72,8 +87,11 @@ function emailCorrecto(email) {
     return result;
 }
 
+/**
+ * Función para sumar 1 receta mas a la cantidad total de recetas que tiene el usuario en el perfil
+ * @return {integer}      Devuelve un integer sumándole 1 a la receta anterior
+ */
 
-/*Función para sumar 1 receta mas a la cantidad total de recetas que tiene el usuario en el perfil*/
 function sumarCantRecetasPerfil(){
 
     let cant = document.getElementsByClassName("cuadroPerfil")[0].children[8];
@@ -84,7 +102,11 @@ function sumarCantRecetasPerfil(){
     
 }
 
-/*devuelve una clase de css según la categoria que reciba*/
+/**
+ * Devuelve una clase de css según la categoria que reciba
+ * @param  {string} c Categoria de la receta
+ * @return {string}      Devuelve tipo de clase de css para esa categoria
+ */
 function categoriaReceta(c){
 
     let devolverClase = "";
@@ -104,7 +126,10 @@ function categoriaReceta(c){
 
 }
 
-//Función para obtener todas las recetas
+/**
+ * Función para obtener todas las recetas
+ * @return {Array}      Devuelve un array con todas las recetas 
+ */
 function obtenerRecetas(){
 
     let Recetas = document.getElementsByClassName("Recetas");
@@ -121,7 +146,10 @@ function obtenerRecetas(){
     return R;
 }
 
-//Función para obtener todos los usuarios
+/**
+ * Función para obtener todos los usuarios
+ * @return {Array}      Devuelve un array con todos los usuarios 
+ */
 function obtenerUsuarios(){
 
     let Usuarios = document.getElementsByClassName("Usuarios");
@@ -139,7 +167,10 @@ function obtenerUsuarios(){
     
 }
 
-//Función para obtener todos los ingredientes
+/**
+ * Función para obtener todos los ingredientes
+ * @return {Array}      Devuelve un array con todos los ingredientes 
+ */
 function obtenerIngredientes(){
 
     let Ingredientes = document.getElementsByClassName("Ingredientes");
@@ -157,7 +188,10 @@ function obtenerIngredientes(){
 
 }
 
-//Función para obtener info del usuario
+/**
+ * Función para obtener info del usuario
+ * @return {Array}      Devuelve un array con la info de usuario
+ */
 function obtenerInfo() {
     
     let Info = document.getElementsByClassName("infoUsuarios");
@@ -175,7 +209,10 @@ function obtenerInfo() {
 
 }
 
-//Función para obtener las novedades de recetas 
+/**
+ * Función para obtener todas las novedades
+ * @return {Array}      Devuelve un array con todas las novedades
+ */
 function obtenerNovedades(){
 
     let Novedades = document.getElementsByClassName("divNovedades");
@@ -193,7 +230,10 @@ function obtenerNovedades(){
 
 }
 
-//Función para obtener las recetas mejores puntuadas
+/**
+ * Función para obtener todas las recetas puntuadas
+ * @return {Array}      Devuelve un array con todas las recetas puntuadas
+ */
 function obtenerPuntuadas(){
 
     let Puntuadas = document.getElementsByClassName("divPuntuadas");
@@ -211,7 +251,10 @@ function obtenerPuntuadas(){
 }
 
 
-//Función para obtener la cantidad total de recetas
+/**
+ * Función para obtener todas las cantidad de recetas total de un usuario
+ * @return {string}      Devuelve un string con la cantidad total de recetas de un usuario
+ */
 function CantTotalRecetas(){
 
     let cantT = document.getElementsByClassName("cantTotalRecetas");
@@ -224,7 +267,9 @@ function CantTotalRecetas(){
 
 }
 
-/*Función para mostrar error al usuario si el login es incorrecto*/
+/**
+ * Función para mostrar al usuario si el login es correcto o incorrecto
+ */
 function errorUsuario(){
 
     //Creamos los elementos
@@ -249,7 +294,9 @@ function errorUsuario(){
 
 }
 
-/*Función para mostrar a los usuarios que los campos están vacíos*/
+/**
+ * Función para mostrar a los usuarios que los campos están vacíos
+ */
 function ventanaCamposVacios(){
 
     //Creamos los elementos
@@ -274,8 +321,9 @@ function ventanaCamposVacios(){
 
 }
 
-
-/*Función para mostrar a los usuarios que los campos del registro estan vacíos*/
+/**
+ * Función para mostrar a los usuarios que los campos del registro estan vacíos
+ */
 function errorUsuario(){
 
     //Creamos los elementos
@@ -300,7 +348,9 @@ function errorUsuario(){
 
 }
 
-/*Función para mostrar al usuario que se ha registrado correctamente*/
+/**
+ * Función para mostrar al usuario que se ha registrado correctamente
+ */
 function verificarRegistro(){
 
     //Creamos los elementos
@@ -325,7 +375,9 @@ function verificarRegistro(){
 
 }
 
-/*Función que sirve para enviar al usuario al login, con un identificador*/
+/**
+ * Función que sirve para enviar al usuario al login, con un identificador
+ */
 function enviarALogin(cont){    
 
     //Login
@@ -359,7 +411,12 @@ function enviarALogin(cont){
 
 }
 
-/*Función para comprobar si el JSON está vacío*/
+
+/**
+ * Función para comprobar si el JSON está vacío
+ * @param  {JSON} obj JSON 
+ * @return {boolean}      Devuelve true si no está vacío, false si está vacío
+ */
 function jsonVacio(obj){
     for(var key in obj) {
         if(obj.hasOwnProperty(key))return false;
@@ -367,8 +424,12 @@ function jsonVacio(obj){
     return true;
 }
 
-//Filtros
-
+/**
+ * Función para filtrar de una lista Ul elementos
+ * @param  {String} value Texto a buscar
+ * @param  {tag} li Elemento li en el que buscar de la lista 
+ * @return {Array}      Devuelve un array con los elementos li que coincidan con el valor buscado
+ */
 function filtrar(value,li){
     let ListaLi = [];   
 
@@ -393,26 +454,33 @@ function filtrar(value,li){
     return ListaLi;
 }
 
-/*Función para desactivar campos del pefil*/
+/**
+ * Función para desactivar campos del perfil
+ * @param  {input} input Input a desactivar
+ * 
+ */
 function desactivarCampo(input){
     input.disabled = true;
     input.style.backgroundColor = "gray";
 }
 
-/*Función para activar campos del perfil*/
+/**
+ * Función para activar campos del perfil
+ * @param  {input} input Input a activar
+ * 
+ */
 function activarCampo(input){
     input.disabled = false;
     input.style.backgroundColor = "white";
 }
 
-/*Función para comparar 2 objetos 1 de datos antiguos, 2 datos nuevos*/
+/**
+ * Función para comparar 2 objetos
+ * @param  {Object} a Datos del primero objeto
+ * @param  {Object} b Datos del segundo objeto
+ * @return {Array}     Devuelve un array con los nuevos cambios
+ */
 function comparar(a,b){
-
-    //console.log(a[0]);
-
-    //console.log(b);
-    
-    
 
     //Imagen
     //let datoAntiguo1 = a[0].files;
@@ -463,7 +531,12 @@ function comparar(a,b){
     return nuevosDatos;
 }
 
-/*Función para enviar a la base de datos la nueva info del perfil*/
+
+/**
+ * Función para enviar a la base de datos la nueva info del perfil
+ * @param  {Array} a Datos con la info del usuario
+ * 
+ */
 function guardarInfoBD(nuevaInfo){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -506,24 +579,14 @@ function guardarInfoBD(nuevaInfo){
         //document.body.removeChild(div);
         form.submit();
     //}
-
-    /**/
 }
 
-/*Función para obtener la cantidad y el peso del ingrediente*/
-function cantidadPesoIngredientes(ingrediente){
 
-    let medidas = ingrediente.split("-");
-    
-    let UnidadesPesoingrediente = [];
-    UnidadesPesoingrediente.Unidades = medidas[0].trim();
-    UnidadesPesoingrediente.Peso = medidas[1].trim();
-
-    return UnidadesPesoingrediente;    
-
-}
-
-/*Función para leer el archivo imagen subido a ingrediente*/
+/**
+ * Función para leer el archivo imagen subido a ingrediente
+ * @param  {file} a File del input de la imagen
+ * @return {String} Devuelve string de la imagen
+ */
 function leerArchivo(file) {
     var r = new FileReader();
 
@@ -542,7 +605,9 @@ function leerArchivo(file) {
     
 }
 
-/*Función para borrar el div con los datos de la imagen*/
+/**
+ * Función para borrar el div con los datos de la imagen
+ */
 function borrarDIVImagen(div){
 
     let divImagen = document.getElementById(div);
@@ -550,7 +615,11 @@ function borrarDIVImagen(div){
     document.body.removeChild(divImagen);
 }
 
-/*Función para convertir de base64 a blob*/
+/**
+ * Función para convertir de base64 a blob
+ * @param  {base64} dataURI String base64
+ * @return {Blob} Devuelve blob de la imagen
+ */
 function b64toBlob(dataURI) {
 
     var byteString = atob(dataURI.split(',')[1]);
@@ -563,7 +632,12 @@ function b64toBlob(dataURI) {
     return new Blob([ab], { type: 'image/jpeg' });
 }
 
-/*Función para añadir a la base de datos un ingrediente*/
+
+/**
+ * Función para añadir a la base de datos un ingrediente
+ * @param  {input} inputNombre Input del nombre del ingrediente
+ * @param  {input} inputCategoria Input del nombre de la categoria 
+ */
 function anyadirIngredienteBD(inputNombre,inputCategoria){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -593,6 +667,11 @@ function anyadirIngredienteBD(inputNombre,inputCategoria){
     //}
 }
 
+/**
+ * Función para buscar si un ingrediente de los que tiene el usuario existe en alguna de las recetas
+ * @param  {String} IngredientesRecetas String con los ingredientes de una receta
+ * @return  {Array} Devuelve la búsqueda de todas las recetas que contengan ingredientes que tiene el usuario 
+ */
 function buscarIngredientes(IngredientesRecetas) {
 
     let r = Ingredientes.map(i => eval('/'+i[0].Nombre+'/').test(IngredientesRecetas) == true);
@@ -600,6 +679,11 @@ function buscarIngredientes(IngredientesRecetas) {
     return r;
 }
 
+/**
+ * Función para comprar si coincide algún ingrediente del usuario con los de la receta
+ * @param  {Array} array Array true o false de los ingredientes que coinciden
+ * @return  {boolean} Devuelve true si coincide algún ingrediente
+ */
 function comprobarIngredientes(array) {
     for (let i = 0; i < array.length; i++) {
         

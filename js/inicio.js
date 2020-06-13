@@ -37,16 +37,11 @@ let general;
 let divSeccion;
 let todasSecciones;
 
-
-
-
 /////MENU/////
 
 /*Menu*/
 let divMenu = document.getElementsByClassName("Menu")[0];
 let botonesMenu;
-
-
 
 /*Función con la que construiremos todo el contenido principal*/
 function contenidoPrincipal(){
@@ -73,10 +68,8 @@ function quitarSeccion(){
     let contenidoPuesto = document.querySelector(".Contenido").children;    
     
     //Recorremos y eliminamos todos los anteriores para dejar paso al nuevo
-    for (let i = 0; i < contenidoPuesto.length; i++) {
-       
-        general.removeChild(contenidoPuesto[i]);
-        
+    for (let i = 0; i < contenidoPuesto.length; i++) {       
+        general.removeChild(contenidoPuesto[i]);        
     }
 }
 
@@ -130,31 +123,6 @@ function seccionPuesta(){
     }
 }
 
-/*Función para recoger los datos de los parametros*/
-function getParametros(){
-
-    let arrayParametros = new Array();
-    
-    let parametrosURL = location.search.substr(1,location.search.length).split("=");
-
-    let parametro = parametrosURL[0];
-
-    let parametro2 = parametrosURL[1];
-
-    arrayParametros.push(parametro);
-
-    arrayParametros.push(parametro2);
-
-    return arrayParametros;
-}
-
-function crearDivJS(t){
-    let div = document.createElement("div");
-    div.classList.add("divJS")
-    div.innerHTML = t;
-    document.body.appendChild(div);
-}
-
 /*Función principal*/
 function init(){
 
@@ -182,7 +150,7 @@ function init(){
     //Por defecto construiremos el contenido y mostraremos los datos de inicio
     construirSeccion("Inicio");
     mostrarInicio();
-    Header(Usuarios);
+    Header();
 
 }
 
